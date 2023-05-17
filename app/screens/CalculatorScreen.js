@@ -2,9 +2,11 @@ import { StyleSheet, Text, TextInput, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import React, { useState } from "react";
 import Colors from "../configs/Colors";
+import AppTextInput from "../components/AppTextInput";
+import AppText from "../components/AppText";
 
 export default function CalculatorScreen() {
-  const [showSplit, setShowSplit] = useState(false);
+  const [showSplit, setShowSplit] = useState(true);
 
   return (
     <View style={styles.mainContainer}>
@@ -12,59 +14,35 @@ export default function CalculatorScreen() {
         <Text>Ads bar here</Text>
       </View>
       <View style={styles.contentContainer}>
-        <View style={styles.billContainer}>
-          <View style={styles.billTextContainer}>
-            <Text style={styles.billText}>Bill</Text>
-          </View>
-          <View style={styles.billAmountContainer}>
-            <TextInput placeholder="$0.00" keyboardType="numeric"></TextInput>
-          </View>
-        </View>
+        <AppTextInput
+          keyboardType={"numeric"}
+          label={"Bill"}
+          placeholder={"$0.00"}
+        />
         <View style={styles.tipPercentContainer}>
-          <View style={styles.tip15Container}>
-            <Text style={styles.tipPercentText}>15%</Text>
-          </View>
-          <View style={styles.tip18Container}>
-            <Text style={styles.tipPercentText}>18%</Text>
-          </View>
-          <View style={styles.tip20Container}>
-            <Text style={styles.tipPercentText}>20%</Text>
-          </View>
-          <View style={styles.tipCustomContainer}>
-            <Text style={styles.tipPercentText}>C</Text>
-          </View>
+          <AppText>15%</AppText>
+          <AppText>18%</AppText>
+          <AppText>20%</AppText>
+          <AppText>C%</AppText>
         </View>
         <View style={styles.tipContainer}>
-          <View style={styles.tipTextContainer}>
-            <Text style={styles.tipText}>Tip</Text>
-          </View>
-          <View style={styles.tipAmountContainer}>
-            <TextInput placeholder="$0.00" keyboardType="numeric"></TextInput>
-          </View>
+          <AppText>Tip</AppText>
+          <AppText>$0.00</AppText>
         </View>
         <View style={styles.splitContainer}>
-          <View style={styles.splitButtonContainer}>
-            <Text style={styles.splitQuestionText}>
-              {showSplit ? "Split By" : "Split?"}
-            </Text>
-          </View>
-          {/* <View style={styles.splitByContainer}>
-            <Text style={styles.splitByText}>Split By</Text>
-          </View> */}
           {showSplit ? (
-            <View style={styles.splitNumberContainer}>
-              <TextInput placeholder="$0.00" keyboardType="numeric"></TextInput>
-            </View>
-          ) : null}
+            <>
+              <AppText>Split By</AppText>
+              <AppText>2</AppText>
+            </>
+          ) : (
+            <AppText>Split?</AppText>
+          )}
         </View>
         <View style={styles.totalDivider} />
         <View style={styles.totalContainer}>
-          <View style={styles.totalTextContainer}>
-            <Text style={styles.totalText}>Total</Text>
-          </View>
-          <View style={styles.totalAmountContainer}>
-            <TextInput placeholder="$0.00" keyboardType="numeric"></TextInput>
-          </View>
+          <AppText>Total</AppText>
+          <AppText>$0.00</AppText>
         </View>
       </View>
       <View style={styles.keypadContainer}>
