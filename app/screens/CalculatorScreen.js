@@ -18,6 +18,8 @@ export default function CalculatorScreen() {
           keyboardType={"numeric"}
           label={"Bill"}
           placeholder={"$0.00"}
+          textInputStyle={styles.billTextInput}
+          topContainerStyle={styles.billTopContainer}
         />
         <View style={styles.tipPercentContainer}>
           <AppText>15%</AppText>
@@ -60,90 +62,34 @@ const styles = StyleSheet.create({
     // width:
     // justifyContent: "center",
   },
-  billContainer: {
-    flexDirection: "row",
-    // flex: 1,
+  billTextInput: {
+    fontSize: 30,
   },
-  billTextContainer: {
+  billTopContainer: {
     flex: 1,
-    backgroundColor: "yellow",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  billAmountContainer: {
-    flex: 1,
-    backgroundColor: "red",
-    alignItems: "center",
-    justifyContent: "center",
   },
   contentContainer: {
     flex: 0.7,
-    // backgroundColor: "cyan",
+    flexDirection: "column",
   },
   keypadContainer: {
     flex: 0.4,
-    // backgroundColor: "yellow",
   },
   mainContainer: {
     flex: 1,
     backgroundColor: Colors.primary,
-    // backgroundColor: "black",
   },
   splitContainer: {
     flexDirection: "row",
-  },
-  splitButtonContainer: {
     flex: 1,
-    backgroundColor: "orange",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  splitNumberContainer: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
   },
   tipContainer: {
     flexDirection: "row",
-  },
-  tipTextContainer: {
     flex: 1,
-    backgroundColor: "yellow",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  tipAmountContainer: {
-    flex: 1,
-    backgroundColor: "red",
-    alignItems: "center",
-    justifyContent: "center",
   },
   tipPercentContainer: {
     flexDirection: "row",
-  },
-  tip15Container: {
     flex: 1,
-    backgroundColor: "red",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  tip18Container: {
-    flex: 1,
-    backgroundColor: "green",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  tip20Container: {
-    flex: 1,
-    backgroundColor: "gray",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  tipCustomContainer: {
-    flex: 1,
-    backgroundColor: "pink",
-    alignItems: "center",
-    justifyContent: "center",
   },
   totalDivider: {
     borderBottomColor: "black",
@@ -152,18 +98,6 @@ const styles = StyleSheet.create({
   },
   totalContainer: {
     flexDirection: "row",
-    // flex: 1,
-  },
-  totalTextContainer: {
     flex: 1,
-    backgroundColor: "yellow",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  totalAmountContainer: {
-    flex: 1,
-    backgroundColor: "red",
-    alignItems: "center",
-    justifyContent: "center",
   },
 });

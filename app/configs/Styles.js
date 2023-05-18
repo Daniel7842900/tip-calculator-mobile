@@ -12,6 +12,9 @@ export default {
     alignItems: "center",
     justifyContent: "center",
   },
+  baseText: {
+    fontSize: 30,
+  },
 
   // billContainer: {
   //     flexDirection: "row",

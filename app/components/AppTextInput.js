@@ -4,14 +4,21 @@ import AppText from "./AppText";
 
 import defaultStyles from "../configs/Styles";
 
-export default function AppTextInput({ keyboardType, label, placeholder }) {
+export default function AppTextInput({
+  keyboardType,
+  label,
+  placeholder,
+  textInputStyle,
+  topContainerStyle,
+}) {
   return (
-    <View style={defaultStyles.textInputTopContainer}>
+    <View style={[defaultStyles.textInputTopContainer, topContainerStyle]}>
       <AppText>{label}</AppText>
       <View style={defaultStyles.textInputContainer}>
         <TextInput
           placeholder={placeholder}
           keyboardType={keyboardType}
+          style={textInputStyle}
         ></TextInput>
       </View>
     </View>

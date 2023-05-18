@@ -6,7 +6,7 @@ import defaultStyles from "../configs/Styles";
 export default function AppText({ children, containerStyle, textStyle }) {
   return (
     <View style={defaultStyles.textContainer}>
-      <Text style={textStyle}>{children}</Text>
+      <Text style={defaultStyles.baseText}>{children}</Text>
     </View>
   );
 }
